@@ -1,10 +1,6 @@
 ﻿using PropertyChanged;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace WPFOxyPlotFody
@@ -21,9 +17,7 @@ namespace WPFOxyPlotFody
             public double yData { get; set; }
         }
 
-
         public double RandomNumberValue { get; set; }
-
         public double ExampleValue { get; set; }
 
         public ViewModel()
@@ -35,7 +29,6 @@ namespace WPFOxyPlotFody
 
             Data = new Collection<CollectionDataValue>();
             ExampleValue = 0;
-
         }
 
         /// <summary>
@@ -45,12 +38,9 @@ namespace WPFOxyPlotFody
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-
-            
             RandomNumberValue = 21.5 + rand.NextDouble();
             Data.Add(new CollectionDataValue { xData = ExampleValue, yData = 21.5 + rand.NextDouble() });
             ExampleValue++;
-
         } 
     }
 }
